@@ -32,9 +32,15 @@
             $stmt->bindParam(':telefono', $this->telefono);
             $stmt->bindParam(':domicilio', $this->domicilio);
 
-            $stmt -> execute();
+            $result = $stmt -> execute();
 
             $conexion -> desconectar();
+
+            if($result == 1){
+                header("Location: ../../RC.php?estatus=inserted");
+            } else{
+                header("Location: ../../RC.php?estatus=notinserted");
+            }
         }
 
         public function update(){

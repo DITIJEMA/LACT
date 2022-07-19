@@ -26,12 +26,6 @@
                     echo 'si';
 
                     $result = $cliente->create();
-
-                    if($result == 0){
-                        header("Location: ../../RC.php?estatus=inserted");
-                     } else{
-                        header("Location: ../../RC.php?estatus=notinserted");
-                    }
                 }
                 break;
             case 2: //* Editar cliente

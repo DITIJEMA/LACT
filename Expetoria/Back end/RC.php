@@ -1,33 +1,8 @@
 <?php
-//! NO USAR ESTOS METODOS
-// $ID="";
-// $Nombre="";
-// $Apellidos="";
-// $Telefono="";
-// $Email="";
-// $Domicilio="";
-// $Password="";
-// if(isset($_GET['ID'])){
-//   $ID=$_GET['ID'];
-// }
-// if(isset($_GET['Nombre'])){
-//   $Nombre=$_GET['Nombre'];
-// }
-// if(isset($_GET['Apellidos'])){
-//   $Apellidos=$_GET['Apellidos'];
-// }
-// if(isset($_GET['Telefono'])){
-//   $Telefono=$_GET['Telefono'];
-// }
-// if(isset($_GET['Email'])){
-//   $Email=$_GET['Email'];
-// }
-// if(isset($_GET['Domicilio'])){
-//   $Domicilio=$_GET['Domicilio'];
-// }
-// if(isset($_GET['Password'])){
-//   $Password=$_GET['Password'];
-// }
+  require_once "./modelo/cliente/cliente_model.php";
+
+  $client = new Cliente();
+  $all_clients = $client -> read_all(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,6 +77,28 @@
       <h1 class="h2">REGISTRO DEL CLIENTE</h1>   
     </div> 
       </div> 
+
+      <?php
+        if(isset($_REQUEST['estatus'])){
+          $estatus = $_REQUEST['estatus'];
+          switch($estatus){
+            case 'inserted':
+      ?>        
+            <div class="alert alert-success" role="alert">
+              Cliente registrado correctamente.
+            </div>
+      <?php
+              break;
+            case 'notinserted':
+      ?>
+            <div class="alert alert-danger" role="alert">
+              Cliente no registrado. Prueba a intentarlo mas tarde o comprueba tu conexion a internet.
+            </div>
+      <?php
+            break;
+          }
+        }
+      ?>
      
     <form class="needs-validation" action="./controlador/cliente/cliente_con.php" method="GET" novalidate>
       <input type="hidden" name="opcion" value="1"> 
