@@ -74,19 +74,67 @@
         }
 
         public function read_by_id(){
+            $conexion = new ConfigDB();
+            $conexion -> conectar();
+            $conn = $conexion -> get_conn();
 
+            $stmt = $conn -> prepare("SELECT c.*,u.* FROM cliente c INNER JOIN usuario u ON c.id = u.id");
+
+            $stmt -> setFetchMode(PDO::FETCH_OBJ);
+
+            $stmt -> execute();
+
+            $conexion -> desconectar();
+
+            return $stmt -> fetchAll();
         }
 
         public function read_all(){
+            $conexion = new ConfigDB();
+            $conexion -> conectar();
+            $conn = $conexion -> get_conn();
 
+            $stmt = $conn -> prepare("SELECT * FROM Vista_all_clientes");
+
+            $stmt -> setFetchMode(PDO::FETCH_OBJ);
+
+            $stmt -> execute();
+
+            $conexion -> desconectar();
+
+            return $stmt -> fetchAll();
         }
 
         public function read_active(){
+            $conexion = new ConfigDB();
+            $conexion -> conectar();
+            $conn = $conexion -> get_conn();
 
+            $stmt = $conn -> prepare("SELECT * FROM Vista_active_clientes");
+
+            $stmt -> setFetchMode(PDO::FETCH_OBJ);
+
+            $stmt -> execute();
+
+            $conexion -> desconectar();
+
+            return $stmt -> fetchAll();
         }
 
         public function read_inactive(){
+            $conexion = new ConfigDB();
+            $conexion -> conectar();
+            $conn = $conexion -> get_conn();
 
+            $stmt = $conn -> prepare("SELECT * FROM Vista_inactive_clientes");
+
+            $stmt -> setFetchMode(PDO::FETCH_OBJ);
+
+            $stmt -> execute();
+
+            $conexion -> desconectar();
+
+            return $stmt -> fetchAll();
         }
     }
 ?>
