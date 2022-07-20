@@ -50,7 +50,7 @@
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="../Front end/LACT.html">
+              <a class="nav-link active" href="../../../Inicio.html">
                 <span data-feather="home"></span>
                 INICIO
               </a>
@@ -60,7 +60,7 @@
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="../Front end/Login.html">
+              <a class="nav-link active" href="../../../Login.html">
                 <span data-feather="home"></span>
                 INICIO DE SESION
               </a>

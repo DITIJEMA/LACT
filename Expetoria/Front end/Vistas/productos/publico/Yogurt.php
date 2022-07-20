@@ -9,7 +9,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="./Vendor/Lacteos.css">
+   <link rel="stylesheet" href="../../../Vendor/CSS/Lacteos.css">
 
    <!-- custom js file link  -->
    <script src="../Back end/Scrip.js" defer></script>
@@ -18,9 +18,9 @@
 <body>
    <nav class="nav">
       <ul class="menu">
-         <li><a href="../Front end/Lacteos_Productos.html">PRODUCTOS</a></li>
-         <li><a href="../Front end/Vistas/Formulario/Pedir.php">PEDIR PRODUCTO</a></li>
-         <li><a href="../Front end/Inicio.html">INICIO</a></li>
+         <li><a href="./Lacteos_Productos.html">PRODUCTOS</a></li>
+         <li><a href="./ver producto.php">PEDIR PRODUCTO</a></li>
+         <li><a href="../../../Inicio.html">INICIO</a></li>
       </ul>
   </nav>
    <!--Productos-->

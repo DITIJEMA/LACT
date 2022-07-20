@@ -63,19 +63,19 @@ if(isset($_GET['CANTIDAD'])){
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="../Formulario/Pedir.php">
+              <a class="nav-link" href="./Pedir.php">
                 <span data-feather="file"></span>
                 HACER PEDIDO<span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../Formulario/RFH.php">
+              <a class="nav-link" href="./RFH.php">
                 <span data-feather="shopping-cart"></span>
                 REGISTRAR HORA Y LUGAR DE LLEGADA
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../Front end/Inicio.html">
+              <a class="nav-link" href="../../Inicio.html">
                 <span data-feather="shopping-cart"></span>
                 INICIO
               </a>
