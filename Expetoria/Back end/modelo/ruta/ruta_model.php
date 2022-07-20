@@ -72,6 +72,7 @@
 
         public function read_active(){
             //*Datos no disponibles con estas caracteristicas, agregado por la interfaz CRUD
+            //*por favor no modificar
         }
 
         public function read_inactive(){
