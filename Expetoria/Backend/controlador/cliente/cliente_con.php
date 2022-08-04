@@ -1,12 +1,16 @@
 <?php //!CONSULTA LA BASE DE DATOS PARA HACER LOS COMANDOS CORRESPONDIENTES
     include_once "../../modelo/cliente/cliente_model.php";
 
+    print_r($_REQUEST);
+    echo '<br> </br>';
+    print_r($_FILES);
+
     if(isset($_REQUEST['opcion'])){
         $opcion = $_REQUEST['opcion'];
         switch($opcion){
             case 1: //* Crear cliente
-                if(isset($_GET['nombre']) && isset($_GET['apellidop']) && isset($_GET['apellidom']) && isset($_GET['telefono']) &&
-                isset($_GET['telefono']) && isset($_GET['domicilio']) && isset($_GET['contraseña']) && isset($_GET['email'])){
+                if(isset($_REQUEST['nombre']) && isset($_REQUEST['apellidop']) && isset($_REQUEST['apellidom']) && isset($_REQUEST['telefono']) &&
+                isset($_REQUEST['telefono']) && isset($_REQUEST['domicilio']) && isset($_REQUEST['contraseña']) && isset($_REQUEST['email'])){
                     $dia = date("d");
                     $mes = date("m");
                     $año = date("Y");
@@ -16,6 +20,7 @@
                     $cliente->nombre=$_REQUEST['nombre'];
                     $cliente->apellido_p=$_REQUEST['apellidop'];
                     $cliente->apellido_m=$_REQUEST['apellidom'];
+                    $cliente->imagen=$_FILES['foto']['name'];
                     $cliente->telefono=$_REQUEST['telefono'];
                     $cliente->domicilio=$_REQUEST['domicilio'];
                     $cliente->email=$_REQUEST['email'];
@@ -23,9 +28,16 @@
                     $cliente->fecha_creacion=$date;
                     $cliente->tipo='CLIENTE';
 
-                    echo 'si';
+                    
 
                     $result = $cliente->create();
+
+                    if($result == 1){
+                       header('Location: ../../../Front end/Vistas/clientes/publico/RC.php?send=false');
+                    } else{
+                        include_once "./filecliente.php";
+                        header('Location: ../../../Front end/Vistas/clientes/publico/RC.php?send=true');
+                    }
                 }
                 break;
             case 2: //* Editar cliente

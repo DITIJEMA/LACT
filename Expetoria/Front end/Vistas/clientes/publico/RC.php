@@ -1,5 +1,5 @@
 <?php
-  require_once "./modelo/cliente/cliente_model.php";
+  require_once "../../../../Backend/modelo/cliente/cliente_model.php";
 
   $client = new Cliente();
   $all_clients = $client -> read_all(); 
@@ -79,31 +79,31 @@
       </div> 
 
       <?php
-        if(isset($_REQUEST['estatus'])){
-          $estatus = $_REQUEST['estatus'];
-          switch($estatus){
-            case 'inserted':
-      ?>        
-            <div class="alert alert-success" role="alert">
-              Cliente registrado correctamente.
-            </div>
-      <?php
-              break;
-            case 'notinserted':
+        if(isset($_REQUEST['send'])){
+          $send = $_REQUEST['send'];
+          switch($send){
+            case 'true':
       ?>
-            <div class="alert alert-danger" role="alert">
-              Cliente no registrado. Prueba a intentarlo mas tarde o comprueba tu conexion a internet.
-            </div>
+        <div class="alert alert-primary" role="alert">
+          Cliente registrado exitosamente.
+        </div>
       <?php
-            break;
+          break;
+          case 'false':
+      ?>
+        <div class="alert alert-danger" role="alert">
+          Cliente no registrado exitosamente.
+        </div>
+      <?php
           }
         }
       ?>
      
-    <form class="needs-validation" action="./controlador/cliente/cliente_con.php" method="GET" novalidate>
+    <form class="needs-validation" action="../../../../Backend/controlador/cliente/cliente_con.php" enctype="multipart/form-data" method="POST" novalidate>
       <input type="hidden" name="opcion" value="1"> 
       <!-- //! DECLARAR LOS NAME DE LOS INPUT CON LETRAS MINUSCULAS
       //? Agregar las columnas que faltan en en este formulario, para poder conectar todo -->
+
       <div class="form-row">
       <div class="col-md-6 mb-3">
                 <label for="validationCustom02">NOMBRE</label>
@@ -171,9 +171,18 @@
                 </div>
             </div>
             </div>
-           
 
+            <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationCustom02">FOTO</label>
+              <input type="file" class="form-control" name="foto" id="validationCustom02" placeholder="CORREO" value="" required />
+              <div class="valid-feedback">Regitro correcto</div>
+              <div class="invalid-feedback">
+                Hay un error revice por favor            
+                </div>
             </div>
+            </div>
+
             <div class="form-group">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />

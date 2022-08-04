@@ -1,11 +1,14 @@
 <?php
-    require_once "../EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/crud1.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
+
 
     class Cliente implements CRUD{//aqui se usaran los procedimientos de sql server, en cada uno de las funciones
         public $id;
         public $nombre;
         public $apellido_p;
         public $apellido_m;
+        public $imagen;
         public $telefono;
         public $domicilio;
         public $contraseña;
@@ -18,13 +21,14 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("EXECUTE Alta_cliente :email,:contrasena,:fecha_creacion,:tipo,:nombre,
+            $stmt = $conn -> prepare("EXECUTE Alta_cliente :email,:contrasena,:fecha_creacion,:tipo,:imagen,:nombre,
             :apellido_p,:apellido_m,:telefono,:domicilio");
 
             $stmt->bindParam(':email', $this->email); 
             $stmt->bindParam(':contrasena', $this->contraseña);
             $stmt->bindParam(':fecha_creacion', $this->fecha_creacion);
             $stmt->bindParam(':tipo', $this->tipo);
+            $stmt->bindParam(':imagen', $this->imagen);
             $stmt->bindParam(':nombre', $this->nombre);
             $stmt->bindParam(':apellido_p', $this->apellido_p);
             $stmt->bindParam(':apellido_m', $this->apellido_m);
@@ -34,12 +38,6 @@
             $result = $stmt -> execute();
 
             $conexion -> desconectar();
-
-            if($result == 1){
-                header("Location: ../../RC.php?estatus=inserted");
-            } else{
-                header("Location: ../../RC.php?estatus=notinserted");
-            }
         }
 
         public function update(){
