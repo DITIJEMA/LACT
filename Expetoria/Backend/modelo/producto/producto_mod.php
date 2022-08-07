@@ -1,7 +1,7 @@
 <?php
     //! NO MOVER EL CODIGO DE ESTAS PARTES, SI ES QUE NO HAY ERRORES
-    require_once "../../conexion/conexion.php";
-    require_once "../../conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
 
     class Producto implements CRUD{
         public $id;
@@ -63,6 +63,10 @@
 
             $conexion -> desconectar();
         } 
+
+        public function act_stock(){
+            
+        }
 
         public function read_by_id(){
             $conexion = new ConfigDB();

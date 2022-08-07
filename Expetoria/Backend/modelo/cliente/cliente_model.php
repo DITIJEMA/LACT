@@ -1,5 +1,5 @@
 <?php
-    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/crud1.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/CRUD.php";
     require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
 
 

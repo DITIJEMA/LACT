@@ -60,7 +60,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM vehiculos WHERE id = :id");
+            $stmt = $conn -> prepare("SELECT * FROM vehiculo WHERE id = :id");
             $stmt -> bindParam(':id', $this->id);
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
@@ -110,6 +110,22 @@
             $conn = $conexion -> get_conn();
 
             $stmt = $conn -> prepare("SELECT * FROM Vistas_inactive_vehiculos");
+
+            $stmt -> setFetchMode(PDO::FETCH_OBJ);
+
+            $stmt -> execute();
+
+            $conexion -> desconectar();
+
+            return $stmt -> fetchAll();
+        }
+
+        public function read_available(){
+            $conexion = new ConfigDB();
+            $conexion -> conectar();
+            $conn = $conexion -> get_conn();
+
+            $stmt = $conn -> prepare("SELECT * FROM Vistas_available_vehiculos");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 

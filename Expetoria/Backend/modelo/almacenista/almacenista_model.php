@@ -1,16 +1,14 @@
 <?php
-    require_once "../../conexion/conexion.php";
-    require_once "../../conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
 
-    class Conductor implements CRUD{
+    class Almacenista implements CRUD{
         public $id;
         public $nombre;
         public $apellido_p;
         public $apellido_m;
         public $telefono;
         public $direccion;
-        public $ruta;
-        public $vehiculo;
         public $salario;
         public $contratacion;
         public $email;
@@ -25,8 +23,8 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("EXECUTE Alta_conductor :email,:contrasena,:fecha_creacion,:tipo,:imagen,:nombre,
-            :apellido_p,:apellido_m,:telefono,:domicilio,:ruta,:vehiculo,:salario,:fecha_contratacion");
+            $stmt = $conn -> prepare("EXECUTE Alta_almacenista :email,:contrasena,:fecha_creacion,:tipo,:imagen,:nombre,
+            :apellido_p,:apellido_m,:telefono,:domicilio,:salario,:fecha_contratacion");
 
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':contrasena', $this->contrasena);
@@ -38,15 +36,12 @@
             $stmt->bindParam(':apellido_m', $this->apellido_m);
             $stmt->bindParam(':telefono', $this->telefono);
             $stmt->bindParam(':domicilio', $this->direccion);
-            $stmt->bindParam(':ruta', $this->ruta);
-            $stmt->bindParam(':vehiculo', $this->vehiculo);
             $stmt->bindParam(':salario', $this->salario);
             $stmt->bindParam(':fecha_contratacion', $this->contratacion);
 
             $stmt -> execute();
 
             $conexion -> desconectar();
-
         }
 
         public function update(){
@@ -56,7 +51,7 @@
 
             $stmt = $conn -> prepare("UPDATE producto SET email=:email,contrasena=:contrasena,creacion_cuenta=:fecha_creacion,
             imagen=:imagen,nombre=:nombre,apellido_p=:apellido_p,apellido_m=:apellido_m,
-            telefono=:telefono,direccion=:domicilio,id_ruta=:ruta,id_vehiculo=:vehiculo,salario=:salario,fecha_contracion=:fecha_contratacion");
+            telefono=:telefono,direccion=:domicilio,salario=:salario,fecha_contracion=:fecha_contratacion");
 
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':contrasena', $this->contrasena);
@@ -67,8 +62,6 @@
             $stmt->bindParam(':apellido_m', $this->apellido_m);
             $stmt->bindParam(':telefono', $this->telefono);
             $stmt->bindParam(':domicilio', $this->direccion);
-            $stmt->bindParam(':ruta', $this->ruta);
-            $stmt->bindParam(':vehiculo', $this->vehiculo);
             $stmt->bindParam(':salario', $this->salario);
             $stmt->bindParam(':fecha_contratacion', $this->contratacion);
 
@@ -82,21 +75,20 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("DELETE FROM conductor WHERE id = :id");
-
+            $stmt = $conn -> prepare("DELETE FROM almacenista WHERE id = :id");
             $stmt->bindParam(':id', $this->id);
 
             $stmt -> execute();
 
             $conexion -> desconectar();
         }
-        
+
         public function read_by_id(){
             $conexion = new ConfigDB();
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM conductor WHERE id = :id");
+            $stmt = $conn -> prepare("SELECT * FROM alamcenista WHERE id = :id");
             $stmt -> bindParam(':id', $this->id);
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
@@ -113,7 +105,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM Vista_all_conductores");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_all_almacenista");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 
@@ -129,7 +121,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM Vista_active_conductores");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_active_almacenista");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 
@@ -145,7 +137,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM Vista_inactive_conductores");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_inactive_almacenista");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 
@@ -156,5 +148,4 @@
             return $stmt -> fetchAll();
         }
     }
-
 ?>
