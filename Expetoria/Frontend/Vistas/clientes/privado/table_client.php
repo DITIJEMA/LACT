@@ -32,6 +32,8 @@
             <th><?php echo $all->telefono ?></th>
             <th><?php echo $all->direccion ?></th>
             <th><?php echo $all->activo ?></th>
+            <th><a href="./ver_clientes.php?edit&id=<?php echo $all->id ?>">EDITAR</a></th>
+            <th><a href="./ver_clientes.php?delete&id=<?php echo $all->id ?>">BORRAR</a></th>
         </tr>
 
         <?php

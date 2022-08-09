@@ -1,10 +1,10 @@
 <?php
-  if(isset($_REQUEST['id']) and isset($_REQUEST['editar'])){
-    $cliente->id=$_REQUEST['id'];
-    $resultado=$cliente->read_by_id();
+  if(isset($_REQUEST['id']) and isset($_REQUEST['edit'])){
+    $clientes_all->id=$_REQUEST['id'];
+    $resultado=$clientes_all->read_by_id();
     $clie=$resultado[0];
 ?>
-<form class="p-4 needs-validation" enctype="multipart/form-data" action="/Expetoria/Backend/controlador/cliente/cliente_con.php" method="get" novalidate>
+<form class="p-4 needs-validation" enctype="multipart/form-data" action="/Expetoria/Backend/controlador/cliente/cliente_con.php" method="POST" novalidate>
   <input type="hidden" name="opcion" value="2">
   <input type="hidden" name="id" value="<?php echo $clie->id ?>">
   <div class="form-row">

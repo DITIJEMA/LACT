@@ -14,7 +14,7 @@
                 //! NO MOVER ESTE PEDAZO DE CODIGO, SOLO MODIFICAR LAS VARIABLES DE ARRIBA
                 $this->conn= new PDO("sqlsrv:Server=$this->server,$this->port;Database=$this->database", $this->user , $this->password);
                 $this->conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Conexion exitosa";
+                echo "";
                 } catch(PDOException $e){
                 echo "Conexion no exitosa: ".$e->getMessage();
             }

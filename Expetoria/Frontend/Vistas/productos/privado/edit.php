@@ -1,9 +1,8 @@
 <?php
-  if(isset($_REQUEST['id'])and isset($_REQUEST['borrar'])){
-    $producto->id=$_REQUEST['id'];
-    $resultado=$producto->read_by_id();
+  if(isset($_REQUEST['id']) and isset($_REQUEST['edit'])){
+    $all_products->id=$_REQUEST['id'];
+    $resultado=$all_products->read_by_id();
     $prod=$resultado[0];
-
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="#" method="get" novalidate>
   <input type="hidden" name="opcion" value="2">

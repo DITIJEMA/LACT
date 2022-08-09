@@ -1,9 +1,8 @@
 <?php
-  if(isset($_REQUEST['id'])and isset($_REQUEST['borrar'])){
-    $cliente->id=$_REQUEST['id'];
-    $resultado=$cliente->read_by_id();
+  if(isset($_REQUEST['id'])and isset($_REQUEST['delete'])){
+    $clientes_all->id=$_REQUEST['id'];
+    $resultado=$clientes_all->read_by_id();
     $clie=$resultado[0];
-
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="/Expetoria/Backend/controlador/cliente/cliente_con.php" method="get" novalidate>
   <input type="hidden" name="opcion" value="2">

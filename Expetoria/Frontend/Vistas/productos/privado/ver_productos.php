@@ -1,15 +1,10 @@
 <?php 
-    include_once "../../../../Backend/modelo/cliente/cliente_model.php";
+    include_once "../../../../Backend/modelo/producto/producto_mod.php";
 
-    //* Exportar los registros de todos los clientes, activos e inactivos
-    $clientes_all = new Cliente();
-    $all_clients = $clientes_all -> read_all();
+    //* Exportar los registros de todos los productos, activos e inactivos
+    $all_products = new Producto;
+    $all = $all_products -> read_all();
 
-    $clientes_active = new Cliente();
-    $active_clients = $clientes_active -> read_active();
-
-    $clientes_inactive = new Cliente();
-    $inactive_clients = $clientes_inactive -> read_inactive();
 ?>
 
 <!DOCTYPE html>
@@ -82,19 +77,23 @@
       <div class="needs-validation" action="./Registro Cliente.php" method="get" novalidate>
       <div class="form-row">
       <div class="col-md-3-mb-3">   
-      <h1 class="h2">REGISTRO DEL CLIENTE</h1>   
+      <h1 class="h2">REGISTRO DE PRODUCTOS</h1>   
     </div> 
       </div> 
      
     <?php
-      include "./table_client.php";
+      include "./table_producto.php";
     ?>
+
+    <hr>
 
     <?php
       if(isset($_REQUEST['edit']) && isset($_REQUEST['id'])){
-        include "../publico/edit.php";
+        include "../privado/edit.php";
       } else if(isset($_REQUEST['delete']) && isset($_REQUEST['id'])){
-        include "../publico/show.php";
+        include "../privado/show.php";
+      } else if(isset($_REQUEST['create'])){
+        include "../privado/create.php";
       }
     ?>
 
