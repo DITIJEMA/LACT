@@ -11,7 +11,7 @@
             <td>Estado</td>
             <td>Editar</td>
             <td>Borrar</td>
-            <td><button type="button" class="btn btn-primary"><a href="./ver_productos.php?create">+ AGREGAR</a></button></td>
+            <td><button type="button" class="btn btn-primary"><a href="./ver_productos.php?create" class="text-button">+ AGREGAR</a></button></td>
         </tr>
     </thead>
 
@@ -22,7 +22,7 @@
         <tr>
             <th><?php echo $todo->id ?></th>
             <th><?php echo $todo->descripcion ?></th>
-            <th><?php echo $todo->imagen ?></th>
+            <th><img src="../../../../Backend/img/productos/<?php echo $todo->imagen ?>" alt="<?php echo $todo->imagen ?>" height="100px" width="150px"></th>
             <th><?php echo $todo->nombre  ?></th>
             <th>$<?php echo $todo->precio ?></th>
             <th><?php echo $todo->cantidad ?></th>

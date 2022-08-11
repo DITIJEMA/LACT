@@ -1,6 +1,11 @@
 <?php
     include_once "../../modelo/producto/producto_mod.php";
 
+    print_r($_REQUEST);
+    echo '<br></br>';
+    print_r($_FILES);
+
+
     if(isset($_REQUEST['opcion'])){
         $opcion = $_REQUEST['opcion'];
 
@@ -9,7 +14,7 @@
                 $producto = new Producto;
                 $producto -> stock = $_REQUEST['stock'];
                 $producto -> precio = $_REQUEST['precio'];
-                $producto -> imagen = $_FILES['imagen']['name'];
+                $producto -> imagen = $_FILES['foto']['name'];
                 $producto -> cantidad = $_REQUEST['cantidad'];
                 $producto -> tipo = $_REQUEST['tipo'];
                 $producto -> descripcion = $_REQUEST['descripcion'];
@@ -17,17 +22,17 @@
                 $result = $producto -> create();
 
                 if($result == 1){
-                    header('Location: ../../../Front end/Vistas/productos/privado/see-producto.php?create=false');
+                    header('Location: ../../../Front end/Vistas/productos/privado/ver-producto.php?create=false');
                  } else{
                      include_once "./fileproducto.php";
-                     header('Location: ../../../Front end/Vistas/productos/privado/see-producto.php?create=true');
+                     header('Location: ../../../Front end/Vistas/productos/privado/ver-producto.php?create=true');
                  }
                 break;
             case 2: //update
                 $producto = new Producto;
                 $producto -> stock = $_REQUEST['stock'];
                 $producto -> precio = $_REQUEST['precio'];
-                $producto -> imagen = $_FILES['imagen']['name'];
+                $producto -> imagen = $_FILES['foto']['name'];
                 $producto -> cantidad = $_REQUEST['cantidad'];
                 $producto -> tipo = $_REQUEST['tipo'];
                 $producto -> descripcion = $_REQUEST['descripcion'];
@@ -50,7 +55,6 @@
                 if($result == 1){
                     header('Location: ../../../Front end/Vistas/productos/privado/see-producto.php?delete=false');
                  } else{
-                     include_once "./fileproducto.php";
                      header('Location: ../../../Front end/Vistas/productos/privado/see-producto.php?delete=true');
                  }
                 break;

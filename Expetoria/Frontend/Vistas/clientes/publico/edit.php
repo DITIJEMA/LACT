@@ -3,14 +3,14 @@
     $clientes_all->id=$_REQUEST['id'];
     $resultado=$clientes_all->read_by_id();
     $clie=$resultado[0];
+    print_r($resultado);
 ?>
-<form class="p-4 needs-validation" enctype="multipart/form-data" action="/Expetoria/Backend/controlador/cliente/cliente_con.php" method="POST" novalidate>
+<form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../../Backend/controlador/cliente/cliente_con.php" method="POST" novalidate>
   <input type="hidden" name="opcion" value="2">
-  <input type="hidden" name="id" value="<?php echo $clie->id ?>">
   <div class="form-row">
       <div class="mb-3">
       <label for="nombre">ID</label>
-        <input type="number" class="form-control" id="validationCustom02" name="ID" placeholder="ID" value="<?php echo $clie->id ?>" readonly><br>
+        <input type="number" class="form-control" id="validationCustom02" name="id" placeholder="ID" value="<?php echo $clie->id ?>" readonly><br>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -27,14 +27,14 @@
       <div class="form-row">
       <div class="mb-3">
         <label for="apellido1">Apellido Paterno</label>
-        <input type="Text" class="form-control" id="validationCustom02" name="apellido_p" placeholder="apellido" value="<?php echo $clie->apellido_p?>" required>
+        <input type="Text" class="form-control" id="validationCustom02" name="apellido_p" placeholder="apellidop" value="<?php echo $clie->apellido_p?>" required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
 
       <div class="mb-3">
         <label for="apellido1">Apellido Materno</label>
-        <input type="Text" class="form-control" id="validationCustom02" name="apellido_m" placeholder="apellido" value="<?php echo $clie->apellido_m?>" required>
+        <input type="Text" class="form-control" id="validationCustom02" name="apellido_m" placeholder="apellidom" value="<?php echo $clie->apellido_m?>" required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -43,7 +43,8 @@
       <div class="form-row">
       <div class="mb-3">
         <label for="apellido1">Imagen</label>
-        <input type="File" class="form-control" id="validationCustom02" name="imagen" placeholder="imagen" value="<?php echo $clie->imagen?>" required>
+        <img src="../../../../Backend/img/clientes/<?php echo $clie->imagen ?>" alt="<?php echo $clie->imagen ?>" height="100px" width="150px">
+        <input type="file" class="form-control" id="validationCustom02" name="foto" placeholder="imagen" value="<?php echo $clie->imagen?>" >
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -59,14 +60,14 @@
       <div class="form-row">
       <div class="mb-3">
         <label for="apellido1">Domicilio</label>
-        <input type="Text" class="form-control" id="validationCustom02" name="Domicilio" placeholder="domicilio" value="<?php echo $clie->domicilio?>"  required>
+        <input type="Text" class="form-control" id="validationCustom02" name="domicilio" placeholder="domicilio" value="<?php echo $clie->direccion?>"  required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
 
       <div class="mb-3">
         <label for="apellido1">Contraseña</label>
-        <input type="password" class="form-control" id="validationCustom02" name="contraseña" placeholder="contraseña" value="<?php echo $clie->contraseña?>"  required>
+        <input type="password" class="form-control" id="validationCustom02" name="contraseña" placeholder="contraseña" value="<?php echo $clie->contrasena?>"  required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -82,7 +83,7 @@
 
       <div class="mb-3">
         <label for="apellido1">Fecha de creaciom</label>
-        <input type="date" class="form-control" id="validationCustom02" name="fecha_creacion" placeholder="fecha" value="<?php echo $clie->fecha?>"  required>
+        <input type="date" class="form-control" id="validationCustom02" name="fecha_creacion" placeholder="fecha" value="<?php echo $clie->creacion_cuenta?>"  required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>

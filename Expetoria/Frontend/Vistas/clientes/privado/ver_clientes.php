@@ -85,16 +85,14 @@
       <h1 class="h2">REGISTRO DEL CLIENTE</h1>   
     </div> 
       </div> 
-     
-    <?php
-      include "./table_client.php";
-    ?>
 
     <?php
       if(isset($_REQUEST['edit']) && isset($_REQUEST['id'])){
         include "../publico/edit.php";
       } else if(isset($_REQUEST['delete']) && isset($_REQUEST['id'])){
         include "../publico/show.php";
+      } else{
+        include "./table_client.php";
       }
     ?>
 

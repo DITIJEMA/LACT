@@ -3,6 +3,7 @@
     $all_products->id=$_REQUEST['id'];
     $resultado=$all_products->read_by_id();
     $prod=$resultado[0];
+    print_r($prod);
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="#" method="get" novalidate>
   <input type="hidden" name="opcion" value="2">
@@ -31,16 +32,11 @@
       <div class="mb-3">
         <label for="apellido1">Tipo</label>
       <select class="custom-select" name="tipo" id="validationCustom02"  placeholder="tipo" value="" value="<?php echo $prod->tipo ?>" required>
-                <option selected disabled value="">Elige una Opcion</option>
-              <option></option>
-              <option></option>
-              <option></option>
-               <option></option>
-              <option></option>
-              <option></option>
-              <option></option>
-              <option></option>
-              </select>
+        <option selected disabled value="">Elige una Opcion</option>
+        <option value="LECHE">LECHE</option>
+        <option value="QUESO">QUESO</option>
+        <option value="YOGURT">YOGURT</option>
+      </select>
               <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -54,7 +50,7 @@
 
       <div class="mb-3">
         <label for="apellido1">Estado</label>
-        <input type="" class="form-control" id="validationCustom02" name="telefono" placeholder="telefono" value="<?php echo $prod->telefono ?>" required>
+        <input type="" class="form-control" id="validationCustom02" name="telefono" placeholder="telefono" value="<?php echo $prod->estado ?>" required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -67,7 +63,7 @@
       </div>
 
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
+        <button type="submit" class=" btn btn-primary w-100 fs-5">EDITAR</button>
       </div>
 
     </form>

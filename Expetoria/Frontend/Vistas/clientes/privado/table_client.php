@@ -27,7 +27,7 @@
             <th><?php echo $all->apellido_p ?></th>
             <th><?php echo $all->apellido_m ?></th>
             <th><?php echo $all->creacion_cuenta ?></th>
-            <th><?php echo $all->imagen ?></th>
+            <th><img src="../../../../Backend/img/clientes/<?php echo $all->imagen ?>" alt="<?php echo $all->imagen ?>" height="100px" width="150px"></th>
             <th><?php echo $all->tipo ?></th>
             <th><?php echo $all->telefono ?></th>
             <th><?php echo $all->direccion ?></th>

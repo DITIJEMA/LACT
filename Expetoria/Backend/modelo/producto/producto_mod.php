@@ -37,7 +37,7 @@
             $conn = $conexion -> get_conn();
 
             $stmt = $conn -> prepare("UPDATE producto SET stock = :stock, precio = :precio, imagen = :imagen,
-            cantidad = :cantidad, tipo = :tipo, descripcion = :descripcion WHERE id = :id");
+            cantidad = :cantidad, tipo = :tipo, descripcion = :descripcion, estado = :estado WHERE id = :id");
             $stmt -> bindParam(':id', $this->id);
             $stmt -> bindParam(':stock', $this->stock);
             $stmt -> bindParam(':precio', $this->precio);
@@ -45,6 +45,7 @@
             $stmt -> bindParam(':cantidad', $this->cantidad);
             $stmt -> bindParam(':tipo', $this->tipo);
             $stmt -> bindParam(':descripcion', $this->descripcion);
+            $stmt -> bindParam(':estado', $this->estado);
 
             $stmt -> execute();
 

@@ -45,11 +45,13 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("UPDATE usuario u INNER JOIN cliente c ON u.id = c.id SET u.email = :email,
-            u.contrasena = :contrasena, c.nombre=:nombre, c.apellido_p=:apellidop, c.apellido_m=:apellido:m,
-            c.telefono=:telefono, c.domicilio=:domicilio");
+            $stmt = $conn -> prepare("UPDATE usuario u INNER JOIN cliente c ON u.id = c.id SET u.imagen = :imagen,u.email = :email,
+            u.contrasena = :contrasena, c.nombre=:nombre, c.apellido_p=:apellido_p, c.apellido_m=:apellido_m,
+            c.telefono=:telefono, c.domicilio=:domicilio WHERE u.id = :id");
 
+            $stmt->bindParam(':id', $this->id); 
             $stmt->bindParam(':email', $this->email); 
+            $stmt->bindParam(':imagen', $this->imagen); 
             $stmt->bindParam(':contrasena', $this->contraseña);
             $stmt->bindParam(':nombre', $this->nombre);
             $stmt->bindParam(':apellido_p', $this->apellido_p);
@@ -81,7 +83,8 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT c.*,u.* FROM cliente c INNER JOIN usuario u ON c.id = u.id");
+            $stmt = $conn -> prepare("SELECT c.*,u.* FROM cliente c INNER JOIN usuario u ON c.id = u.id WHERE c.id = :id");
+            $stmt->bindParam(':id', $this->id); 
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 
