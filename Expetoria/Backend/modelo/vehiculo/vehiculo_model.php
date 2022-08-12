@@ -1,6 +1,6 @@
 <?php
-    require_once "../../conexion/conexion.php";
-    require_once "../../conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
 
     class Vehiculo implements CRUD{
         public $id;
@@ -77,7 +77,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM Vistas_all_vehiculos");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_all_vehiculos");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 

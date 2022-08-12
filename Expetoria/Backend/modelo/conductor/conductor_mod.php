@@ -1,6 +1,6 @@
 <?php
-    require_once "../../conexion/conexion.php";
-    require_once "../../conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/CRUD.php";
+    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
 
     class Conductor implements CRUD{
         public $id;
