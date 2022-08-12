@@ -5,12 +5,11 @@
     $prod=$resultado[0];
     print_r($prod);
 ?>
-<form class="p-4 needs-validation" enctype="multipart/form-data" action="#" method="get" novalidate>
+<form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../../Backend/controlador/producto/producto_con.php" method="POST" novalidate>
   <input type="hidden" name="opcion" value="2">
-  <input type="hidden" name="id" value="<?php echo $prod->id ?>">
       <div class="mb-3">
       <label for="nombre">ID</label>
-        <input type="number" class="form-control" id="validationCustom02" name="ID" placeholder="ID" value="<?php echo $prod->id ?>" readonly><br>
+        <input type="number" class="form-control" id="validationCustom02" name="id" placeholder="ID" value="<?php echo $prod->id ?>" readonly><br>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -24,18 +23,18 @@
 
       <div class="mb-3">
         <label for="apellido1">Imagen</label>
-        <input type="file" class="form-control" id="validationCustom02" name="imagen" placeholder="Imagen" value="<?php echo $prod->imagen ?>"required>
+        <input type="file" class="form-control" id="validationCustom02" name="foto" placeholder="Imagen" value="<?php echo $prod->imagen ?>"required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
 
       <div class="mb-3">
         <label for="apellido1">Tipo</label>
-      <select class="custom-select" name="tipo" id="validationCustom02"  placeholder="tipo" value="" value="<?php echo $prod->tipo ?>" required>
-        <option selected disabled value="">Elige una Opcion</option>
-        <option value="LECHE">LECHE</option>
-        <option value="QUESO">QUESO</option>
-        <option value="YOGURT">YOGURT</option>
+      <select class="custom-select" name="tipo" id="validationCustom02"  placeholder="tipo" value="<?php echo $prod->tipo ?>" required>
+        <option disabled value="">Elige una Opcion</option>
+        <option value="2" <?php echo $prod->tipo == '2'?'selected':''; ?>>LECHE</option>
+        <option value="1" <?php echo $prod->tipo == '1'?'selected':''; ?>>QUESO</option>
+        <option value="3" <?php echo $prod->tipo == '3'?'selected':''; ?>>YOGURT</option>
       </select>
               <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
@@ -49,8 +48,15 @@
       </div>
 
       <div class="mb-3">
+        <label for="apellido1">Precio</label>
+        <input type="number" class="form-control" id="validationCustom02" name="precio" placeholder="precio" value="<?php echo $prod->precio ?>" required>
+        <div class="valid-feedback">Registro corecto</div>
+        <div class="invalid-feedback">Hay un error revice por favor</div>
+      </div>
+
+      <div class="mb-3">
         <label for="apellido1">Estado</label>
-        <input type="" class="form-control" id="validationCustom02" name="telefono" placeholder="telefono" value="<?php echo $prod->estado ?>" required>
+        <input type="" class="form-control" id="validationCustom02" name="estado" placeholder="telefono" value="<?php echo $prod->estado ?>" required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
