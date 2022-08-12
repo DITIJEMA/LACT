@@ -1,3 +1,7 @@
+<?php
+  if(isset($_REQUEST['id']) && isset($_REQUEST['create'])){
+?>
+
 <form method="POST" action="../../../../Backend//controlador/producto/producto_con.php" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
 <input type="hidden" value="1" name="opcion">
 
@@ -53,3 +57,7 @@
       </div>
 
     </form>
+
+<?php
+  }
+?>
