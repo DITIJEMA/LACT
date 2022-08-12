@@ -11,7 +11,8 @@
         public $tipo;
         public $cantidad;
         public $estado;
-        public $descripcion;
+        public $descripcion; 
+
 
         public function create(){
             $conexion = new ConfigDB();
@@ -35,9 +36,8 @@
             $conexion = new ConfigDB();
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
-
-            $stmt = $conn -> prepare("UPDATE producto SET stock = :stock, precio = :precio, imagen = :imagen,
-            cantidad = :cantidad, tipo = :tipo, descripcion = :descripcion, estado = :estado WHERE id = :id");
+            print_r('paso ecitosamente');
+            $stmt = $conn -> prepare("UPDATE producto SET stock = :stock, precio = :precio, imagen = :imagen, cantidad = :cantidad, tipo = :tipo, descripcion = :descripcion, estado = :estado WHERE id = :id");
             $stmt -> bindParam(':id', $this->id);
             $stmt -> bindParam(':stock', $this->stock);
             $stmt -> bindParam(':precio', $this->precio);
@@ -46,8 +46,10 @@
             $stmt -> bindParam(':tipo', $this->tipo);
             $stmt -> bindParam(':descripcion', $this->descripcion);
             $stmt -> bindParam(':estado', $this->estado);
-
+            print_r('tambien aqui');
             $stmt -> execute();
+
+            print_r($stmt);
 
             $conexion -> desconectar();
         } 
