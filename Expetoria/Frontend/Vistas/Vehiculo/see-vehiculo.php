@@ -80,10 +80,54 @@
       </div> 
 
       <?php
+        if(isset($_REQUEST['c'])){
+          $c = $_REQUEST['c'];
+          switch($c){
+            case true:
+      ?>
+      <div class="alert alert-success" role="alert">
+        Vehiculo registrado correctamente
+      </div>
+      <?php
+          break;
+          case false:   
+      ?>
+      <div class="alert alert-danger" role="alert">
+        Vehiculo no creado 
+      </div>
+      <?php
+          break;
+          }
+        }
+      ?>
+
+      <?php
+        if(isset($_REQUEST['u'])){
+          $u = $_REQUEST['u'];
+          switch($u){
+            case true:
+      ?>
+      <div class="alert alert-success" role="alert">
+        Vehiculo actualizado correctamente
+      </div>
+      <?php
+          break;
+          case false:   
+      ?>
+      <div class="alert alert-danger" role="alert">
+        Vehiculo no actualizado
+      </div>
+      <?php
+          break;
+          }
+        }
+      ?>
+
+      <?php
         if(isset($_REQUEST['create'])){
             include "./create.php";
         } else if(isset($_REQUEST['id']) && isset($_REQUEST['edit'])){
-
+            include "./edit.php";
         } else{
             include "./table_vehiculo.php";
         }

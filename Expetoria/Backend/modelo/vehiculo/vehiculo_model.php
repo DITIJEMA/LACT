@@ -8,6 +8,7 @@
         public $modelo;
         public $matricula;
         public $carga;
+        public $estado;
 
         public function create(){
             $conexion = new ConfigDB();
@@ -30,12 +31,13 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("UPDATE vehiculo SET marca = :marca, modelo = :modelo, matricula = :matricula, carga = :carga WHERE id = :id");
+            $stmt = $conn -> prepare("UPDATE vehiculo SET marca = :marca, modelo = :modelo, matricula = :matricula, carga = :carga, estado = :estado WHERE id = :id");
             $stmt -> bindParam(':id', $this->id);
             $stmt -> bindParam(':marca', $this->marca);
             $stmt -> bindParam(':modelo', $this->modelo);
             $stmt -> bindParam(':matricula', $this->matricula);
             $stmt -> bindParam(':carga', $this->carga);
+            $stmt -> bindParam(':estado', $this->estado);
 
             $stmt -> execute();
 
