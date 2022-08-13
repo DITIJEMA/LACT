@@ -18,8 +18,30 @@
     <tbody class="table table-hover">
         <?php
             foreach($all as $todo){
+                $status = $todo -> estado;
+                switch($status){
+                    case 'A':
         ?>
+
         <tr>
+            <th class="bg-info"><?php echo $todo->id ?></th>
+            <th class="bg-info"><?php echo $todo->descripcion ?></th>
+            <th class="bg-info"><img src="../../../../Backend/img/productos/<?php echo $todo->imagen ?>" alt="<?php echo $todo->imagen ?>" height="100px" width="150px"></th>
+            <th class="bg-info"><?php echo $todo->nombre  ?></th>
+            <th class="bg-info">$<?php echo $todo->precio ?></th>
+            <th class="bg-info"><?php echo $todo->cantidad ?></th>
+            <th class="bg-info"><?php echo $todo->stock ?></th>
+            <th class="bg-info"><?php echo $todo->estado ?></th>
+            <th class="bg-info"><a href="./ver_productos.php?edit&id=<?php echo $todo->id ?>">Editar</a></th>
+            <th class="bg-info"><a href="./ver_productos.php?delete&id=<?php echo $todo->id ?>">Borrar</a></th>
+        </tr>
+        
+        <?php
+                break;
+                case 'N':
+        ?>
+
+        <tr class="bg-danger">
             <th><?php echo $todo->id ?></th>
             <th><?php echo $todo->descripcion ?></th>
             <th><img src="../../../../Backend/img/productos/<?php echo $todo->imagen ?>" alt="<?php echo $todo->imagen ?>" height="100px" width="150px"></th>
@@ -31,7 +53,9 @@
             <th><a href="./ver_productos.php?edit&id=<?php echo $todo->id ?>">Editar</a></th>
             <th><a href="./ver_productos.php?delete&id=<?php echo $todo->id ?>">Borrar</a></th>
         </tr>
+
         <?php
+                }
             }
         ?>
     </tbody>

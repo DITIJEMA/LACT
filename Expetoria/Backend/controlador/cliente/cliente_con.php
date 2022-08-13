@@ -67,8 +67,13 @@
                     $cliente = new Cliente();
                     $cliente->id=$_REQUEST['id'];
 
-                    $cliente->delete();
-                    echo 'entro';
+                    $result = $cliente->delete();
+
+                    if($result == 1){
+                        header("Location: ../../../RC.php?d=false");
+                    } else{
+                        header("Location: ../../../RC.php?d=true");
+                    }
                 }
                 break;
             default: //* Opcion no accesible

@@ -140,9 +140,6 @@ margin-left: 4px;
 						</div>
 						<input type="password" class="form-control" placeholder="CONTRASEÑA">
 					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">RECORDAR
-					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
