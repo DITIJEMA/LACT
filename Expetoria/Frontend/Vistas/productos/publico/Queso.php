@@ -14,15 +14,15 @@
    <link rel="stylesheet" href="../../../Vendor//CSS//Lacteos.css">
 
    <!-- custom js file link  -->
-   <script src="../Back end/Scrip.js" defer></script>
+   <script src="../../../../Backend/Scrip.js" defer></script>
 
 </head>
 <body>
    <nav class="nav">
       <ul class="menu">
-         <li><a href="./Lacteos_Productos.html">PRODUCTOS</a></li>
-         <li><a href="./ver producto.php">PEDIR PRODUCTO</a></li>
-         <li><a href="../../../Inicio.html">INICIO</a></li>
+      <li><a href="../../productos/publico/Lacteos_Productos.html">PRODUCTOS</a></li>
+          <li><a href="../../Producto//index.php">PEDIR PRODUCTO</a></li>
+          <li><a href="../../../Inicio.html">INICIO</a></li>
       </ul>
   </nav>
    <!--Productos-->
@@ -136,8 +136,8 @@
            <p>Queso de mesa</p>
            <div class="price">$120.00</div>
            <div class="buttons">
-            <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-            <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
            </div>
         </div>
      
@@ -148,8 +148,8 @@
            <p>Queso de mesa</p>
            <div class="price">$58.00</div>
            <div class="buttons">
-            <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-            <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
            </div>
         </div>
      
@@ -160,8 +160,8 @@
             <p>Queso de mesa</p>
             <div class="price">$25.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -172,8 +172,8 @@
             <p>Queso de fundir</p>
             <div class="price">$130.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -184,8 +184,8 @@
             <p>Queso de fundir</p>
             <div class="price">$65.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -197,7 +197,8 @@
             <div class="price">$31.00</div>
             <div class="buttons">
                <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+        ¿          <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -208,8 +209,8 @@
             <p>Queso amarillo</p>
             <div class="price">$42.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-              <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -220,8 +221,8 @@
             <p>Queso cottage</p>
             <div class="price">$35.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -232,8 +233,8 @@
             <p>Queso oxaca</p>
             <div class="price">$40.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -244,8 +245,8 @@
             <p>Queso panela</p>
             <div class="price">$42.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>/a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -253,19 +254,11 @@
             <i class="fas fa-times"></i>
             <img src="../../../Imagenes//panela.jpg" alt="">
             <h3>Queso panela 250g</h3>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <span>(100)</span>
-            </div>
             <p>Queso panela</p>
             <div class="price">$26.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -276,8 +269,8 @@
             <p>Queso crema</p>
             <div class="price">$35.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -288,8 +281,8 @@
             <p>Crema acida</p>
             <div class="price">$55.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -301,7 +294,8 @@
             <div class="price">$35.00</div>
             <div class="buttons">
                <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+               <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -312,8 +306,8 @@
             <p>Crema Acida</p>
             <div class="price">$18.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      </div>

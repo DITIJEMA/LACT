@@ -12,14 +12,14 @@
    <link rel="stylesheet" href="../../../Vendor//CSS//Lacteos.css">
 
    <!-- custom js file link  -->
-   <script src="../Back end/Scrip.js" defer></script>
+   <script src="../../../../Backend/Scrip.js" defer></script>
 
 </head>
 <body>
    <nav class="nav">
       <ul class="menu">
-          <li><a href="./Lacteos_Productos.html">PRODUCTOS</a></li>
-          <li><a href="./ver producto.php">PEDIR PRODUCTO</a></li>
+          <li><a href="../../productos/publico/Lacteos_Productos.html">PRODUCTOS</a></li>
+          <li><a href="../../Producto//index.php">PEDIR PRODUCTO</a></li>
           <li><a href="../../../Inicio.html">INICIO</a></li>
       </ul>
   </nav>
@@ -80,8 +80,8 @@
            <p>Leche natural</p>
            <div class="price">$12.00</div>
            <div class="buttons">
-            <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-            <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
            </div>
         </div>
      
@@ -92,8 +92,8 @@
            <p>Leche bebible sabor a fresa</p>
            <div class="price">$8.00</div>
            <div class="buttons">
-            <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-            <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
            </div>
         </div>
      
@@ -104,8 +104,8 @@
             <p>Leche bebible sabor a vainilla</p>
             <div class="price">$8.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -116,8 +116,8 @@
             <p>Leche bebible sabor a chocolate</p>
             <div class="price">$8.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -128,8 +128,8 @@
             <p>Paquete de leche con 10Lts</p>
             <div class="price">$110.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -140,8 +140,8 @@
             <p>Leche de sabores mixtos con 8 envaces</p>
             <div class="price">$75.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      

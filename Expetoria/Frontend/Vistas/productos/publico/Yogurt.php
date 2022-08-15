@@ -12,15 +12,15 @@
    <link rel="stylesheet" href="../../../Vendor//CSS/Lacteos.css">
 
    <!-- custom js file link  -->
-   <script src="/Expetoria//Backend//Scrip.js" defer></script>
+   <script src="../../../../Backend/Scrip.js" defer></script>
 
 </head>
 <body>
    <nav class="nav">
       <ul class="menu">
-         <li><a href="./Lacteos_Productos.html">PRODUCTOS</a></li>
-         <li><a href="./ver producto.php">PEDIR PRODUCTO</a></li>
-         <li><a href="../../../Inicio.html">INICIO</a></li>
+      <li><a href="../../productos/publico/Lacteos_Productos.html">PRODUCTOS</a></li>
+          <li><a href="../../Producto//index.php">PEDIR PRODUCTO</a></li>
+          <li><a href="../../../Inicio.html">INICIO</a></li>
       </ul>
   </nav>
    <!--Productos-->
@@ -98,8 +98,8 @@
            <p>Yogurt natural</p>
            <div class="price">$22.00</div>
            <div class="buttons">
-              <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-              <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
            </div>
         </div>
      
@@ -111,8 +111,8 @@
            <p>Yogurt de durazno</p>
            <div class="price">$25.00</div>
            <div class="buttons">
-            <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-            <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
         </div>
      
         <div class="preview" data-target="p-3">
@@ -123,8 +123,8 @@
             <p>Yogurt de fresa</p>
             <div class="price">$25.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -136,8 +136,8 @@
             <p>Paqute de 3 Lt sabores mixtos</p>
             <div class="price">$69.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -149,8 +149,8 @@
             <p>Paquete de 5 1.25 Lt sabores mixtos</p>
             <div class="price">$39.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -158,19 +158,11 @@
             <i class="fas fa-times"></i>
             <img src="../../../Imagenes//Mixto.jpeg" style="width: 300px;" alt="">
             <h3>Paquete yogurt de sabores mixtos 250 ml con 10 envaces</h3>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <span>(100)</span>
-            </div>
             <p>Paquete de 10 2.5 Lt sabores mixtos</p>
             <div class="price">$75.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -178,19 +170,11 @@
             <i class="fas fa-times"></i>
             <img src="../../../Imagenes//fres.jpeg" style="width: 300px;" alt="">
             <h3>Yogurt de fresa 250 ml</h3>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <span>(100)</span>
-            </div>
             <p>Yogurt de fresa</p>
             <div class="price">$8.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
@@ -198,19 +182,11 @@
             <i class="fas fa-times"></i>
             <img src="../../../Imagenes//durazno.jpeg" style="width: 300px;" alt="">
             <h3>Yogurt de durazno 250 ml</h3>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <span>(100)</span>
-            </div>
             <p>Yogurt de durazno</p>
             <div class="price">$8.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-              <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      
@@ -218,19 +194,11 @@
             <i class="fas fa-times"></i>
             <img src="../../../Imagenes//Yog.jpeg" style="width: 300px;" alt="">
             <h3>Yogurt natural 250 ml</h3>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <span>(100)</span>
-            </div>
             <p>Yogurt natural</p>
             <div class="price">$7.00</div>
             <div class="buttons">
-               <a href="../Back end/RFH.php" class="buy">Compra ahora</a>
-               <a href="../Back end/Pedir.php" class="cart">Agregar al carrito</a>
+            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
+            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
      </div>
