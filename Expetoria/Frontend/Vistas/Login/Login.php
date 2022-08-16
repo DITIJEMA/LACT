@@ -31,7 +31,7 @@
 html,body{
 width: 100%;
 background-size: cover;
-background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)), url(../../Img/f.jpg) no-repeat;
+background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)), url(../../Imagenes/F1.jpg) no-repeat;
 height: 100%;
 }
 
@@ -51,7 +51,7 @@ background-color: rgba(0,0,0,0.5) !important;
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
-color: #FFC312;
+color: brown;
 }
 .social_icon span:hover{
 color: white;
@@ -70,7 +70,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: brown;
 color: black;
 border:0 !important;
 }
@@ -95,7 +95,7 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: #FFC312;
+background-color: brown;
 width: 100px;
 }
 

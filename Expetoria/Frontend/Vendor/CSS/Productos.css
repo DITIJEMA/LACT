@@ -45,12 +45,14 @@
 
 .container .card h4{
     font-weight: 600;
+    color: #fff;
 }
 
 .container .card p{
     padding: 0 1rem;
     font-size: 16px;
     font-weight: 300;
+    color: #fff;
 }
 
 .container .card a {
