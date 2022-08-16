@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,13 +26,38 @@
         <!-- Navig0ation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"  id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="../Frontend/inicio.html">Inicio</a>
+                <a class="navbar-brand" href="../Frontend/inicio.php">Inicio</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0"> 
                         <li class="nav-item"><a class="nav-link" href="../Frontend/Vistas/Cliente/index.php">Registro para Cliente</a></li>
                         <li class="nav-item"><a class="nav-link" href="../Frontend/Vistas/productos/publico/Lacteos_Productos.html">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Frontend/Vistas/Login/Login.php">Inicio de sesión</a></li>
+                        <?php
+                            if(isset($_SESSION)){
+                                if($_SESSION['tipo'] == 'CONDUCTOR'){
+                        ?>
+                            <li class="nav-item"><a class="nav-link" href="./Vistas/Conductor/publico/edit.php?edit&id=<?php echo $_SESSION['id'] ?>"><?php echo $_SESSION['email'] ?></a></li>
+
+                        <?php
+                                } else if($_SESSION['tipo'] == 'CLIENTE'){
+                        ?>
+                            <li class="nav-item"><a class="nav-link" href="./Vistas/clientes/publico/edit.php?edit&id=<?php echo $_SESSION['id'] ?>">$<?php echo $$_SESSION['email'] ?></a></li>
+                        
+                            <?php
+                                } else if($_SESSION['tipo'] == 'ADMIN'){
+                            ?>
+                            <li class="nav-item"><a class="nav-link" href="./Vistas/clientes/publico/edit.php"><?php echo $_SESSION['email'] ?></a></li>
+
+                            <?php
+                                }else{
+                            ?>
+
+<li class="nav-item"><a class="nav-link" href="./Vistas/Login/Login.php">Iniciar sesion</a></li>
+                        <?php
+                                
+                                }
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>

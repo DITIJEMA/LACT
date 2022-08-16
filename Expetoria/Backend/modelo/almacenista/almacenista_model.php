@@ -30,7 +30,6 @@
             $stmt->bindParam(':contrasena', $this->contrasena);
             $stmt->bindParam(':fecha_creacion', $this->creacion);
             $stmt->bindParam(':tipo', $this->tipo);
-            $stmt->bindParam(':imagen', $this->imagen);
             $stmt->bindParam(':nombre', $this->nombre);
             $stmt->bindParam(':apellido_p', $this->apellido_p);
             $stmt->bindParam(':apellido_m', $this->apellido_m);

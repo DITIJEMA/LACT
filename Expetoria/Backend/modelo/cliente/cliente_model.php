@@ -143,5 +143,24 @@
 
             return $stmt -> fetchAll();
         }
+
+        public function login(){
+            $conexion = new ConfigDB();
+            $conexion -> conectar();
+            $conn = $conexion -> get_conn();
+
+            $stmt = $conn -> prepare("EXECUTE Login_init ");
+
+            $stmt->bindParam(':usuario', $this->email);
+            $stmt->bindParam(':contrasena', $this->contraseña);              
+
+            $stmt -> setFetchMode(PDO::FETCH_OBJ);
+
+            $stmt -> execute();
+
+            $conexion -> desconectar();
+
+            return $stmt -> fetchAll();
+        }
     }
 ?>

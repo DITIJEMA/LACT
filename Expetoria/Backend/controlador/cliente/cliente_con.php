@@ -85,6 +85,12 @@
                     }
                 }
                 break;
+
+            case 4:
+                $cliente = new Cliente;
+                $cliente -> email = $_REQUEST['usuario'];
+                $cliente -> email = $_REQUEST['usuario'];
+                break;    
             default: //* Opcion no accesible
                 echo 'Opcion no disponible';
                 break;

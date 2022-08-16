@@ -126,19 +126,28 @@ margin-left: 4px;
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<?php
+					if(isset($_REQUEST['f'])){
+				?>	
+					Cuenta no encontrada
+				<?php
+					}
+				?>
+				
+				<form action="../../../Backend/modelo/login.php">
+					<input type="hidden" name="option" value="1">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="USUARIO">
+						<input type="text" class="form-control" name="usuario" placeholder="USUARIO">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="CONTRASEÑA">
+						<input type="password" class="form-control" name="contrasena" placeholder="CONTRASEÑA">
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">

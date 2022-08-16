@@ -1,6 +1,8 @@
 <?php
     include_once "../../modelo/almacenista/almacenista_model.php";
 
+    print_r($_REQUEST);
+
     if(isset($_REQUEST['opcion'])){
         $opcion = $_REQUEST['opcion'];
 
@@ -19,10 +21,12 @@
                 $almacenista->telefono=$_REQUEST['telefono'];
                 $almacenista->domicilio=$_REQUEST['domicilio'];
                 $almacenista->email=$_REQUEST['email'];
-                $almacenista->contraseña=$_REQUEST['contraseña'];
+                $almacenista->contrasena=$_REQUEST['contrasena'];
                 $almacenista->creacion=$date;
                 $almacenista->contratacion=$date;
                 $almacenista->tipo='ALMACENISTA';
+
+                print_r($date);
 
                 $result = $almacenista -> create();
 
@@ -30,7 +34,7 @@
                     header('Location: ../../../Frontend/Vistas/Almacenistas/privado/see_almacenista.php');
                  } else{
                      
-                     header('Location: ../../../Frontend/Vistas/Almacenistas/privado/see_almacenista.php');
+                    //  header('Location: ../../../Frontend/Vistas/Almacenistas/privado/see_almacenista.php');
                  }
                 break;
             case 2: //*actualizar 
