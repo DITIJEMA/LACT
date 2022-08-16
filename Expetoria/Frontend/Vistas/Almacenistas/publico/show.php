@@ -6,7 +6,8 @@
     print_r($clie);
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../Backend/controlador/almacenista/almacenista_con.php" method="POST" novalidate>
-  <input type="hidden" name="opcion" value="3">
+<link href="../Dashboard/boton.css" rel="stylesheet" />   
+<input type="hidden" name="opcion" value="3">
   <input type="hidden" name="id" value="<?php echo $alm->nombre ?>">
 
   <div class="mb-3">
@@ -72,7 +73,7 @@
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
       <div class="mb-3">
-        <button type="submit" class=" btn btn-danger w-100 fs-5">BORRAR CUENTA</button>
+        <button type="submit" name="boton" class="boton cuatro">BORRAR CUENTA</button>
       </div>
 
     </form>

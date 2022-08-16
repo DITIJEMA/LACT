@@ -6,7 +6,8 @@
     print_r($resultado);
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../Backend/controlador/almacenista/almacenista_con.php" method="POST" novalidate>
-  <input type="hidden" name="opcion" value="2">
+<link href="../Dashboard/boton.css" rel="stylesheet" />   
+<input type="hidden" name="opcion" value="2">
   <div class="mb-3">
         <label for="apellido1">Nombre</label>
         <input type="Text" class="form-control" id="validationCustom02" name="nombre" required>
@@ -72,7 +73,7 @@
 
 
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
+        <button type="submit" name="boton" class="boton cuatro">Registrar</button>
       </div>
 
     </form>

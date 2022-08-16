@@ -7,7 +7,8 @@
 
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../../Backend/controlador/conductor/conductor_con.php" method="get" novalidate>
-  <input type="hidden" name="opcion" value="3">
+<link href="../Dashboard/boton.css" rel="stylesheet" />  
+<input type="hidden" name="opcion" value="3">
   <input type="hidden" name="id" value="<?php echo $cond->id ?>">
   <input type="hidden" name="id_v" value="<?php echo $cond->id_vehiculo ?>">
   <div class="mb-3">
@@ -41,7 +42,7 @@
       
       
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
+        <button type="submit" name="boton" class="boton cuatro">Registrar</button>
       </div>
     </form>
 <?php

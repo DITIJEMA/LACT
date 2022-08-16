@@ -1,6 +1,7 @@
 <form method="get" action="#" 
 class="row g-3 needs-validation" novalidate>
 <input type="hidden" value="1" name="opcion">
+<link href="../Dashboard/boton.css" rel="stylesheet" /> 
       <div class="mb-3">
       <label for="nombre">ID</label>
         <input type="number" class="form-control" id="validationCustom02" name="ID" placeholder="ID" required>
@@ -72,7 +73,7 @@ class="row g-3 needs-validation" novalidate>
       </div>
 
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
+        <button type="submit" name="boton" class="boton cuatro">Registrar</button>
       </div>
 
     </form>
