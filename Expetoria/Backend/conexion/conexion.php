@@ -2,18 +2,23 @@
 
     class ConfigDB{
         //* Variables que se pueden modificar
+        private $server = 'localhost';
+		private $port = 1433;
+		private $database = 'empresa_lacct';
+		private $user = 'sa';
+		private $password = 'Soyelmejor';
         private $conn = null;
 
         public function conectar(){
             // PHP Data Objects(PDO) Sample Code:
-            try {
-                $conn = new PDO("sqlsrv:server = tcp:lacct1.database.windows.net,1433; Database = lacct1", "KYOLIO", "CaMauAP_9");
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            }
-            catch (PDOException $e) {
-                print("Error connecting to SQL Server.");
-                die(print_r($e));
-            }
+            try{
+                //! NO MOVER ESTE PEDAZO DE CODIGO, SOLO MODIFICAR LAS VARIABLES DE ARRIBA
+                $this->conn= new PDO("sqlsrv:Server=$this->server,$this->port;Database=$this->database", $this->user , $this->password);
+                $this->conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "";
+                } catch(PDOException $e){
+                echo "Conexion no exitosa: ".$e->getMessage();
+                }
         }
 
         public function get_conn(){

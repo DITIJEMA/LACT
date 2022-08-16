@@ -37,7 +37,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
             print_r('paso ecitosamente');
-            $stmt = $conn -> prepare("UPDATE producto SET stock = :stock, precio = :precio, imagen = :imagen, cantidad = :cantidad, tipo = :tipo, descripcion = :descripcion, estado = :estado WHERE id = :id");
+            $stmt = $conn -> prepare("UPDATE producto SET stock = :stock, precio = :precio, imagen = :imagen, cantidad = :cantidad, tipo = :tipo, descripcion = :descripcion WHERE id = :id");
             $stmt -> bindParam(':id', $this->id);
             $stmt -> bindParam(':stock', $this->stock);
             $stmt -> bindParam(':precio', $this->precio);
@@ -141,7 +141,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM producto WHERE tipo = 'LECHE'");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_leche_productos");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 
@@ -157,7 +157,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM producto WHERE tipo = 'QUESO'");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_queso_productos");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 
@@ -173,7 +173,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM producto WHERE tipo = 'YOGURT'");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_yogurt_productos");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 

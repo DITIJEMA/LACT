@@ -55,13 +55,6 @@
       </div>
 
       <div class="mb-3">
-        <label for="apellido1">Estado</label>
-        <input type="" class="form-control" id="validationCustom02" name="estado" placeholder="telefono" value="<?php echo $prod->estado ?>" required>
-        <div class="valid-feedback">Registro corecto</div>
-        <div class="invalid-feedback">Hay un error revice por favor</div>
-      </div>
-
-      <div class="mb-3">
         <label for="apellido1">Descripcion</label>
         <input type="Text" class="form-control" id="validationCustom02" name="descripcion" placeholder="descripcion" value="<?php echo $prod->descripcion ?>"required>
         <div class="valid-feedback">Registro corecto</div>

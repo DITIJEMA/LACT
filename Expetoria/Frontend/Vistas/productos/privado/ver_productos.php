@@ -114,7 +114,7 @@
       } else if(isset($_REQUEST['delete']) && isset($_REQUEST['id'])){
         include "../privado/show.php";
       } else if(isset($_REQUEST['create'])){
-        include "../privado/create.php";
+        include "./create.php";
       } else{
         include "./table_producto.php";
       }
