@@ -1,5 +1,5 @@
 <?php
-    include_once "../../modelo/almacenista";
+    include_once "../../modelo/almacenista/almacenista_model.php";
 
     if(isset($_REQUEST['opcion'])){
         $opcion = $_REQUEST['opcion'];
