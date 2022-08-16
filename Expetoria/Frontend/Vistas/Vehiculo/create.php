@@ -1,4 +1,5 @@
 <form method="POST" action="../../../Backend/controlador/vehiculo/vehiculo_con.php" class="row g-3 needs-validation" novalidate>
+<link href="../Dashboard/boton.css" rel="stylesheet" />  
 <input type="hidden" value="1" name="opcion">
 
       <div class="mb-3">

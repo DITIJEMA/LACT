@@ -5,7 +5,8 @@
     $veh=$resultado[0];
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="#" method="get" novalidate>
-  <input type="hidden" name="opcion" value="2">
+<link href="../Dashboard/boton.css" rel="stylesheet" />    
+<input type="hidden" name="opcion" value="2">
   <input type="hidden" name="id" value="<?php echo $veh->id ?>">
   <div class="mb-3">
   <label for="nombre">ID</label>
