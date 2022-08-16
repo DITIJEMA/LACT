@@ -1,3 +1,11 @@
+<?php
+   include_once "../../../../Backend/modelo/producto/producto_mod.php";
+
+   $leche = new Producto;
+   $all_leche = $leche -> producto_leche();
+   // print_r($all_leche);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,41 +38,19 @@
      
         <div class="products-container">
      
-           <div class="product" data-name="p-1">
-              <img src="../../../Imagenes//leche.jpg" alt="">
-              <h3>Leche 1Lt</h3>
-              <div class="price">$12.00</div>
+         <?php
+            foreach($all_leche as $all){
+         ?>
+
+            <div class="product" data-name="p-<?php echo $all -> id ?>">
+              <img src="../../../../Backend/img/productos/<?php echo $all -> imagen ?>" alt="<?php echo $all -> imagen ?>">
+              <h3><?php echo $all -> descripcion ?></h3>
+              <div class="price">$<?php echo $all -> precio ?></div>
            </div>
-     
-           <div class="product" data-name="p-2">
-              <img src="../../../Imagenes//Fresa.jpeg" alt="">
-              <h3>Leche sabor fresa</h3>
-              <div class="price">$8.00</div>
-           </div>
-     
-           <div class="product" data-name="p-3">
-              <img src="../../../Imagenes//Vainilla.jpeg" alt="">
-              <h3>Leche sabor vainilla</h3>
-              <div class="price">$8.00</div>
-           </div>
-     
-           <div class="product" data-name="p-4">
-              <img src="../../../Imagenes//Chocolate.jpeg" alt="">
-              <h3>Leche sabor a chocolate</h3>
-              <div class="price">$8.00</div>
-           </div>
-     
-           <div class="product" data-name="p-5">
-              <img src="../../../Imagenes//Paquete.jpeg" alt="">
-              <h3>Paquete de leche de 1Lt con 10 envaces</h3>
-              <div class="price">$110.00</div>
-           </div>
-     
-           <div class="product" data-name="p-6">
-              <img src="../../../Imagenes//Mix.jpeg" alt="">
-              <h3>Paquete mixto de leche de sabores de 750ml con 8 envaces </h3>
-              <div class="price">$75.00</div>
-           </div>
+
+         <?php
+            }
+         ?>
      
         </div>
      
@@ -72,78 +58,25 @@
      <!--Tarjeta de compra-->
      
      <div class="products-preview">
-     
-        <div class="preview" data-target="p-1">
-           <i class="fas fa-times"></i>
-           <img src="../../../Imagenes//leche.jpg" alt="">
-           <h3>Leche 1Lt</h3>
-           <p>Leche natural</p>
-           <div class="price">$12.00</div>
-           <div class="buttons">
-           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-           </div>
-        </div>
-     
-        <div class="preview" data-target="p-2">
-           <i class="fas fa-times"></i>
-           <img src="../../../Imagenes//Fresa.jpeg" alt="">
-           <h3>Leche sabor Fresa</h3>
-           <p>Leche bebible sabor a fresa</p>
-           <div class="price">$8.00</div>
-           <div class="buttons">
-           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-           </div>
-        </div>
-     
-        <div class="preview" data-target="p-3">
+
+         <?php
+            foreach($all_leche as $all){
+         ?>
+
+         <div class="preview" data-target="p-<?php echo $all -> id ?>">
             <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Vainilla.jpeg" alt="">
-            <h3>Leche sabor vainilla</h3>
-            <p>Leche bebible sabor a vainilla</p>
-            <div class="price">$8.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
-     
-         <div class="preview" data-target="p-4">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Chocolate.jpeg" alt="">
-            <h3>Leche sabor chocolate</h3>
-            <p>Leche bebible sabor a chocolate</p>
-            <div class="price">$8.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
-     
-         <div class="preview" data-target="p-5">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Paquete.jpeg" alt="">
-            <h3>Paquete de leche</h3>
-            <p>Paquete de leche con 10Lts</p>
-            <div class="price">$110.00</div>
+            <img src="../../../../Backend/img/productos/<?php echo $all -> imagen ?>" alt="">
+            <h3><?php echo $all -> descripcion ?></h3>
+            <div class="price">$<?php echo $all -> precio ?></div>
             <div class="buttons">
             <a href="../../Producto//index.php" class="buy">Compra ahora</a>
             <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
             </div>
          </div>
 
-         <div class="preview" data-target="p-6">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Mixto.jpeg" alt="">
-            <h3>Paquete de leche de sabores mixtos</h3>
-            <p>Leche de sabores mixtos con 8 envaces</p>
-            <div class="price">$75.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
+         <?php
+            }
+         ?>
      
      </div>
      

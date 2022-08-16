@@ -1,3 +1,11 @@
+<?php
+   include_once "../../../../Backend/modelo/producto/producto_mod.php";
+
+   $yogurt = new Producto;
+   $all_yogurt = $yogurt -> producto_yogurt();
+   // print_r($all_yogurt);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,178 +37,46 @@
         <h3 class="title">Productos Yogurt</h3>
      
         <div class="products-container">
-     
-           <div class="product" data-name="p-1">
-              <img src="../../../Imagenes//yogurt.jpg"  alt="">
-              <h3>Yogurt natural 1Lt</h3>
-              <div class="price">$22.00</div>
-           </div>
-     
-           <div class="product" data-name="p-2">
-              <img src="../../../Imagenes//durazno.jpeg" alt="">
-              <h3>Yogurt de durazno 1Lt</h3>
-              <div class="price">$25.00</div>
-           </div>
-     
-           <div class="product" data-name="p-3">
-              <img src="../../../Imagenes//Fresa.jpeg" alt="">
-              <h3>Yogurt de fresa 1Lt</h3>
-              <div class="price">$25.00</div>
-           </div>
-     
-           <div class="product" data-name="p-4">
-              <img src="../../../Imagenes//Mix.jpeg" alt="">
-              <h3>Paquete yogurt de sabores mixtos 1Lt con 3 envaces</h3>
-              <div class="price">$69.00</div>
-           </div>
-     
-           <div class="product" data-name="p-5">
-              <img src="../../../Imagenes//Mixto.jpeg" alt="">
-              <h3>Paquete yogurt de sabores mixtos 250 ml con 5 envaces</h3>
-              <div class="price">$39.00</div>
-           </div>
-     
-           <div class="product" data-name="p-6">
-              <img src="../../../Imagenes//Mixto.jpeg" alt="">
-              <h3>Paquete yogurt de sabores mixtos 250 ml con 10 enavces</h3>
-              <div class="price">$79.00</div>
-           </div>
 
-           <div class="product" data-name="p-7">
-            <img src="../../../Imagenes//fres.jpeg" alt="">
-            <h3>Yogurt de fresa 250ml</h3>
-            <div class="price">$8.00</div>
-         </div>
+         <?php
+            foreach($all_yogurt as $y){
+         ?>
+     
+           <div class="product" data-name="p-<?php echo $y -> id ?>">
+              <img src="../../../../Backend/img/productos/<?php echo $y -> imagen ?>" alt="">
+              <h3><?php echo $y -> descripcion ?></h3>
+              <div class="price">$<?php echo $y -> precio ?></div>
+           </div>
+     
+           <?php
+            }
+         ?>
 
-         <div class="product" data-name="p-8">
-            <img src="../../../Imagenes//durazno.jpeg" alt="">
-            <h3>Yogurt de durazno 250ml</h3>
-            <div class="price">$8.00</div>
-         </div>
-     
-         <div class="product" data-name="p-9">
-            <img src="../../../Imagenes//Yog.jpeg" style="width: 275px;" alt="">
-            <h3>Yogurt natural 250ml</h3>
-            <div class="price">$7.00</div>
-         </div>
-        </div>
-     
      </div>
      <!--Tarjeta de compra-->
      
      <div class="products-preview">
+
+         <?php
+            foreach($all_yogurt as $y){
+         ?>
      
-        <div class="preview" data-target="p-1">
+        <div class="preview" data-target="p-<?php echo $y -> id ?>">
            <i class="fas fa-times"></i>
-           <img src="../../../Imagenes//yogurt.jpg" style="width: 300px;"  alt="">
-           <h3>Yogurt natural 1Lt</h3>
+           <img src="../../../../Backend/img/productos/<?php echo $y -> imagen ?>" style="width: 300px;"  alt="">
+           <h3><?php echo $y -> descripcion ?></h3>
            </div>
-           <p>Yogurt natural</p>
-           <div class="price">$22.00</div>
+           <div class="price">$<?php echo $y -> precio ?></div>
            <div class="buttons">
            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
             <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
            </div>
         </div>
      
-        <div class="preview" data-target="p-2">
-           <i class="fas fa-times"></i>
-           <img src="../../../Imagenes//durazno.jpeg" style="width: 300px;" alt="">
-           <h3>Yogurt de durazno 1Lt</h3>
-           </div>
-           <p>Yogurt de durazno</p>
-           <div class="price">$25.00</div>
-           <div class="buttons">
-           <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-        </div>
-     
-        <div class="preview" data-target="p-3">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Fresa.jpeg" style="width: 300px;" alt="">
-            <h3>Yogurt de fresa 1Lt</h3>
-            </div>
-            <p>Yogurt de fresa</p>
-            <div class="price">$25.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
-     
-         <div class="preview" data-target="p-4">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Mix.jpeg" style="width: 300px;" alt="">
-            <h3>Paquete yogurt de sabores mixtos 1Lt con 3 envaces</h3>
-            </div>
-            <p>Paqute de 3 Lt sabores mixtos</p>
-            <div class="price">$69.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
-     
-         <div class="preview" data-target="p-5">
-            <i class="fas fa-times"></i>
-            <img src="./Imagenes/Mixto.jpeg" style="width: 300px;" alt="">
-            <h3>Paquete yogurt de sabores mixtos 250ml con 5 envaces</h3>
-            </div>
-            <p>Paquete de 5 1.25 Lt sabores mixtos</p>
-            <div class="price">$39.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
+        <?php
+            }
+         ?>
 
-         <div class="preview" data-target="p-6">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Mixto.jpeg" style="width: 300px;" alt="">
-            <h3>Paquete yogurt de sabores mixtos 250 ml con 10 envaces</h3>
-            <p>Paquete de 10 2.5 Lt sabores mixtos</p>
-            <div class="price">$75.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
-
-         <div class="preview" data-target="p-7">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//fres.jpeg" style="width: 300px;" alt="">
-            <h3>Yogurt de fresa 250 ml</h3>
-            <p>Yogurt de fresa</p>
-            <div class="price">$8.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
-
-         <div class="preview" data-target="p-8">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//durazno.jpeg" style="width: 300px;" alt="">
-            <h3>Yogurt de durazno 250 ml</h3>
-            <p>Yogurt de durazno</p>
-            <div class="price">$8.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
-     
-         <div class="preview" data-target="p-9">
-            <i class="fas fa-times"></i>
-            <img src="../../../Imagenes//Yog.jpeg" style="width: 300px;" alt="">
-            <h3>Yogurt natural 250 ml</h3>
-            <p>Yogurt natural</p>
-            <div class="price">$7.00</div>
-            <div class="buttons">
-            <a href="../../Producto//index.php" class="buy">Compra ahora</a>
-            <a href="../../Producto//index.php" class="cart">Agregar al carrito</a>
-            </div>
-         </div>
      </div>
      
      </body>
