@@ -127,7 +127,7 @@
             $conexion -> conectar();
             $conn = $conexion -> get_conn();
 
-            $stmt = $conn -> prepare("SELECT * FROM Vistas_available_vehiculos");
+            $stmt = $conn -> prepare("SELECT * FROM Vista_vehiculo_A");
 
             $stmt -> setFetchMode(PDO::FETCH_OBJ);
 
@@ -137,5 +137,7 @@
 
             return $stmt -> fetchAll();
         }
+
+        
     }
 ?>

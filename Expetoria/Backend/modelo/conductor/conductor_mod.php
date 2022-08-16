@@ -4,6 +4,7 @@
 
     class Conductor implements CRUD{
         public $id;
+        public $id_v;
         public $nombre;
         public $apellido_p;
         public $apellido_m;
@@ -54,14 +55,10 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("UPDATE producto SET email=:email,contrasena=:contrasena,creacion_cuenta=:fecha_creacion,
-            imagen=:imagen,nombre=:nombre,apellido_p=:apellido_p,apellido_m=:apellido_m,
-            telefono=:telefono,direccion=:domicilio,id_ruta=:ruta,id_vehiculo=:vehiculo,salario=:salario,fecha_contracion=:fecha_contratacion");
+            $stmt = $conn -> prepare("EXECUTE Update_conductor :id, :id_v, :nombre, :apellido_p, :apellido_m,:telefono, :domicilio, :ruta, :vehiculo, :salario");
 
-            $stmt->bindParam(':email', $this->email);
-            $stmt->bindParam(':contrasena', $this->contrasena);
-            $stmt->bindParam(':fecha_creacion', $this->creacion);
-            $stmt->bindParam(':imagen', $this->imagen);
+            $stmt->bindParam(':id', $this->id);
+            $stmt->bindParam(':id_v', $this->id_v);
             $stmt->bindParam(':nombre', $this->nombre);
             $stmt->bindParam(':apellido_p', $this->apellido_p);
             $stmt->bindParam(':apellido_m', $this->apellido_m);
@@ -70,7 +67,6 @@
             $stmt->bindParam(':ruta', $this->ruta);
             $stmt->bindParam(':vehiculo', $this->vehiculo);
             $stmt->bindParam(':salario', $this->salario);
-            $stmt->bindParam(':fecha_contratacion', $this->contratacion);
 
             $stmt -> execute();
 
@@ -82,9 +78,10 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("DELETE FROM conductor WHERE id = :id");
+            $stmt = $conn -> prepare("EXECUTE Baja_conductor :id, :id_v");
 
             $stmt->bindParam(':id', $this->id);
+            $stmt->bindParam(':id_v', $this->id_v);
 
             $stmt -> execute();
 

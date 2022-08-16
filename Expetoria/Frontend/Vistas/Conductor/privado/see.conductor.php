@@ -2,9 +2,8 @@
   include_once "../../../../Backend/modelo/conductor/conductor_mod.php";
 
   $all_conductores = new Conductor;
+  $re = new Conductor;
   $all = $all_conductores -> read_all();
-
-  print_r($all);
 ?>
 
 <!DOCTYPE html>
@@ -82,6 +81,17 @@
     </div> 
       </div> 
         
+      <?php
+        if(isset($_REQUEST['create'])){
+          include "./create.php";
+        } else if(isset($_REQUEST['id']) && isset($_REQUEST['edit'])){
+          include "../publico/edit.php";
+        } else if(isset($_REQUEST['id']) && isset($_REQUEST['delete'])){
+          include "../publico/show.php";
+        } else{
+          include "./table-conductor.php";
+        }
+      ?>
 
     <hr>
 

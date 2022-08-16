@@ -1,18 +1,21 @@
 <?php
-  if(isset($_REQUEST['id']) and isset($_REQUEST['editar'])){
-    $conductor->id=$_REQUEST['id'];
-    $resultado=$conductor->read_by_id();
+    include_once "../../../../Backend/modelo/ruta/ruta_model.php";
+    include_once "../../../../Backend/modelo/vehiculo/vehiculo_model.php";
+
+    $all_conductores -> id = $_REQUEST['id'];
+    $resultado=$all_conductores->read_by_id();
     $cond=$resultado[0];
+
+    $rutas = new Ruta;
+    $vehiculo = new Vehiculo;
+
+    $all_rutas = $rutas -> read_all();
+    $all_vehiculos = $vehiculo -> read_available();
 ?>
-<form class="p-4 needs-validation" enctype="multipart/form-data" action="#" method="get" novalidate>
+<form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../../Backend/controlador/conductor/conductor_con.php" method="POST" novalidate>
   <input type="hidden" name="opcion" value="2">
   <input type="hidden" name="id" value="<?php echo $cond->id ?>">
-  <div class="mb-3">
-      <label for="nombre">ID</label>
-        <input type="number" class="form-control" id="validationCustom02" name="ID" placeholder="ID" value="<?php echo $cond->id ?>" readonly><br>
-        <div class="valid-feedback">Registro corecto</div>
-        <div class="invalid-feedback">Hay un error revice por favor</div>
-      </div>
+  <input type="hidden" name="id_v" value="<?php echo $cond -> id_vehiculo ?>">
 
       <div class="mb-3">
         <label for="apellido1">Nombre</label>
@@ -23,7 +26,7 @@
 
       <div class="mb-3">
         <label for="apellido1">Apellido Paterno</label>
-        <input type="Text" class="form-control" id="validationCustom02" name="apellido_p" placeholder="apellido" value="<?php echo $cond->apellidos_p ?>"  required>
+        <input type="Text" class="form-control" id="validationCustom02" name="apellido_p" placeholder="apellido" value="<?php echo $cond->apellido_p ?>"  required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -44,21 +47,39 @@
 
       <div class="mb-3">
         <label for="apellido1">Domicilio</label>
-        <input type="Text" class="form-control" id="validationCustom02" name="domicilio" placeholder="domicilio" value="<?php echo $cond->domicilio ?>" required>
+        <input type="Text" class="form-control" id="validationCustom02" name="direccion" placeholder="domicilio" value="<?php echo $cond->direccion ?>" required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
 
       <div class="mb-3">
         <label for="apellido1">Ruta</label>
-        <input type="Text" class="form-control" id="validationCustom02" name="ruta" placeholder="ruta" value="<?php echo $cond->ruta ?>" required>
+        <select class="custom-select" name="ruta" id="validationCustom02"  placeholder="tipo" value="" required>
+            <option disabled value="">Elige una Opcion</option>
+            <?php
+              foreach($all_rutas as $r){
+            ?>
+              <option value="<?php echo $r -> id ?>" <?php echo ($r -> id == $cond -> id_ruta?'selected':'') ?>><?php echo $r -> id ?> - <?php echo $r -> destino ?></option>
+            <?php
+              }
+            ?>
+          </select>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
 
       <div class="mb-3">
         <label for="apellido1">Vehiculo</label>
-        <input type="text" class="form-control" id="validationCustom02" name="vehiculo" placeholder="vehiculo" value="<?php echo $cond->vehiculo ?>"  required>
+        <select class="custom-select" name="vehiculo" id="validationCustom02"  placeholder="tipo" value="" required>
+            <option disabled value="">Elige una Opcion</option>
+            <?php
+              foreach($all_vehiculos as $v){
+            ?>
+              <option value="<?php echo $v -> id ?>" <?php echo ($v -> id == $cond -> id_vehiculo?'selected':'') ?>><?php echo $v -> id ?> - <?php echo $v -> marca ?> <?php echo $v -> modelo ?></option>
+            <?php
+              }
+            ?>
+          </select>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>
@@ -71,16 +92,8 @@
       </div>
 
       <div class="mb-3">
-        <label for="apellido1">Fecha de contratacion</label>
-        <input type="date" class="form-control" id="validationCustom02" name="fecha_con" placeholder="fecha_con" value="<?php echo $cond->fecha_con ?>"  required>
-        <div class="valid-feedback">Registro corecto</div>
-        <div class="invalid-feedback">Hay un error revice por favor</div>
-      </div>
-
-      <div class="mb-3">
         <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
       </div>
     </form>
 <?php
-  }
   ?>

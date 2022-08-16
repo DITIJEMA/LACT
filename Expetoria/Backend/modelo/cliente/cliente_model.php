@@ -45,13 +45,10 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("UPDATE usuario u INNER JOIN cliente c ON u.id = c.id SET u.imagen = :imagen,u.email = :email,
-            u.contrasena = :contrasena, c.nombre=:nombre, c.apellido_p=:apellido_p, c.apellido_m=:apellido_m,
-            c.telefono=:telefono, c.domicilio=:domicilio WHERE u.id = :id");
+            $stmt = $conn -> prepare("EXECUTE Update_cliente :id, :email, :contrasena, :nombre, :apellido_p, :apellido_m, :telefono, :domicilio");
 
             $stmt->bindParam(':id', $this->id); 
             $stmt->bindParam(':email', $this->email); 
-            $stmt->bindParam(':imagen', $this->imagen); 
             $stmt->bindParam(':contrasena', $this->contraseña);
             $stmt->bindParam(':nombre', $this->nombre);
             $stmt->bindParam(':apellido_p', $this->apellido_p);
@@ -59,7 +56,9 @@
             $stmt->bindParam(':telefono', $this->telefono);
             $stmt->bindParam(':domicilio', $this->domicilio);
 
-            $stmt -> execute();
+            $result = $stmt -> execute();
+
+            print_r($result);
 
             $conexion -> desconectar();
         }
@@ -73,7 +72,9 @@
             
             $stmt->bindParam(':id', $this->id); 
 
-            $stmt -> execute();
+            $result = $stmt -> execute();
+
+            print_r($result);
 
             $conexion -> desconectar();
         }

@@ -40,15 +40,6 @@
       </div>
       </div>
 
-      <div class="form-row">
-      <div class="mb-3">
-        <label for="apellido1">Imagen</label>
-        <img src="../../../../Backend/img/clientes/<?php echo $clie->imagen ?>" alt="<?php echo $clie->imagen ?>" height="100px" width="150px">
-        <input type="file" class="form-control" id="validationCustom02" name="foto" placeholder="imagen" value="<?php echo $clie->imagen?>" >
-        <div class="valid-feedback">Registro corecto</div>
-        <div class="invalid-feedback">Hay un error revice por favor</div>
-      </div>
-
       <div class="mb-3">
         <label for="apellido1">Telefono</label>
         <input type="tel" class="form-control" id="validationCustom02" name="telefono" placeholder="telefono" value="<?php echo $clie->telefono?>"  required>
