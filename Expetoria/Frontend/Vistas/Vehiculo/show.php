@@ -43,7 +43,7 @@
       </div>
 
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
+        <button type="submit" name="boton" class="boton cuatro">Borrar</button>
       </div>
 
     </form>
