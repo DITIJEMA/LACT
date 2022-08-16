@@ -147,10 +147,10 @@ margin-left: 4px;
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					¿NO TIENES CUENTA?<a href="#">CREAR CUENTA</a>
+					¿NO TIENES CUENTA?<a href="../Cliente/index.php">CREAR CUENTA</a>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#"></a>
+					<a href=""></a>
 				</div>
 			</div>
 		</div>
