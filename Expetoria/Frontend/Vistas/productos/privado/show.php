@@ -6,7 +6,8 @@
     print_r($prod);
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../../Backend/controlador/producto/producto_con.php" method="POST" novalidate>
-  <input type="hidden" name="opcion" value="3">
+<link href="../Dashboard/boton.css" rel="stylesheet" />   
+<input type="hidden" name="opcion" value="3">
   <input type="hidden" name="id" value="<?php echo $prod->id ?>">
       <div class="mb-3">
       <label for="nombre">ID</label>
@@ -70,7 +71,7 @@
       </div>
 
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">BORRAR</button>
+        <button type="submit" name="boton" class="boton cuatro">BORRAR</button>
       </div>
 
     </form>

@@ -13,7 +13,8 @@
     $all_vehiculos = $vehiculo -> read_available();
 ?>
 <form class="p-4 needs-validation" enctype="multipart/form-data" action="../../../../Backend/controlador/conductor/conductor_con.php" method="POST" novalidate>
-  <input type="hidden" name="opcion" value="2">
+<link href="../Dashboard/boton.css" rel="stylesheet" />   
+<input type="hidden" name="opcion" value="2">
   <input type="hidden" name="id" value="<?php echo $cond->id ?>">
   <input type="hidden" name="id_v" value="<?php echo $cond -> id_vehiculo ?>">
 
@@ -92,7 +93,7 @@
       </div>
 
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
+        <button type="submit" name="boton" class="boton cuatro">Registrar</button>
       </div>
     </form>
 <?php

@@ -10,6 +10,7 @@
 ?>
 
 <form method="POST" action="../../../../Backend/controlador/conductor/conductor_con.php" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
+<link href="../Dashboard/boton.css" rel="stylesheet" /> 
 <input type="hidden" value="1" name="opcion">
       <div class="mb-3">
         <label for="apellido1">Nombre</label>
@@ -107,7 +108,7 @@
       </div>
 
       <div class="mb-3">
-        <button type="submit" class=" btn btn-primary w-100 fs-5">Registrar</button>
+        <button type="submit" name="boton" class="boton cuatro">Registrar</button>
       </div>
 
     </form>
