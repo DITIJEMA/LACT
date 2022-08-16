@@ -1,6 +1,6 @@
 <?php
-    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/CRUD.php";
-    require_once "/xampp/htdocs/EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
+    require_once "EMPRESA_LACCT/Expetoria/Backend/conexion/CRUD.php";
+    require_once "EMPRESA_LACCT/Expetoria/Backend/conexion/conexion.php";
 
     class Vehiculo implements CRUD{
         public $id;
