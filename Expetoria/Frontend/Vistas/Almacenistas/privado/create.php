@@ -1,5 +1,4 @@
-<form method="get" action="../../../Backend/controlador/almacenista/almacenista_con.php" 
-class="row g-3 needs-validation" novalidate>
+<form method="POST" action="../../../Backend/controlador/almacenista/almacenista_con.php" class="row g-3 needs-validation" novalidate>
 <input type="hidden" value="1" name="opcion">
 
       <div class="mb-3">
@@ -26,13 +25,6 @@ class="row g-3 needs-validation" novalidate>
       <div class="mb-3">
         <label for="salario">Salario</label>
         <input type="number" class="form-control" id="validationCustom02" name="salario"  required>
-        <div class="valid-feedback">Registro corecto</div>
-        <div class="invalid-feedback">Hay un error revice por favor</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="imagen">Imagen</label>
-        <input type="file" class="form-control" id="validationCustom02" name="imagen"required>
         <div class="valid-feedback">Registro corecto</div>
         <div class="invalid-feedback">Hay un error revice por favor</div>
       </div>

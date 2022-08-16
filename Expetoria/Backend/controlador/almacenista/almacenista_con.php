@@ -13,24 +13,24 @@
 
                 $almacenista = new Almacenista();
                 $almacenista->nombre = $_REQUEST['nombre'];
-                $almacenista->apellido_p=$_REQUEST['apellidop'];
-                $almacenista->apellido_m=$_REQUEST['apellidom'];
+                $almacenista->apellido_p=$_REQUEST['apellido_p'];
+                $almacenista->apellido_m=$_REQUEST['apellido_m'];
                 $almacenista->salario=$_REQUEST['salario'];
-                $almacenista->imagen=$_FILES['foto']['name'];
                 $almacenista->telefono=$_REQUEST['telefono'];
                 $almacenista->domicilio=$_REQUEST['domicilio'];
                 $almacenista->email=$_REQUEST['email'];
                 $almacenista->contraseña=$_REQUEST['contraseña'];
-                $almacenista->fecha_creacion=$date;
+                $almacenista->creacion=$date;
+                $almacenista->contratacion=$date;
                 $almacenista->tipo='ALMACENISTA';
 
                 $result = $almacenista -> create();
 
                 if($result == 1){
-                    header('Location: ../../../Front end/Vistas/clientes/publico/RC.php?send=false');
+                    header('Location: ../../../Frontend/Vistas/Almacenistas/privado/see_almacenista.php');
                  } else{
-                     include_once "./filealmacenista.php";
-                     header('Location: ../../../Front end/Vistas/clientes/publico/RC.php?send=true');
+                     
+                     header('Location: ../../../Frontend/Vistas/Almacenistas/privado/see_almacenista.php');
                  }
                 break;
             case 2: //*actualizar 

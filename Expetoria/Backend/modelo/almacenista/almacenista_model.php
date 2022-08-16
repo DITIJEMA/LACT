@@ -23,8 +23,8 @@
             $conexion->conectar();
             $conn = $conexion->get_conn();
 
-            $stmt = $conn -> prepare("EXECUTE Alta_almacenista :email,:contrasena,:fecha_creacion,:tipo,:imagen,:nombre,
-            :apellido_p,:apellido_m,:telefono,:domicilio,:salario,:fecha_contratacion");
+            $stmt = $conn -> prepare("EXECUTE Alta_almacenista :email, :contrasena, :fecha_creacion, :tipo, :nombre,
+            :apellido_p, :apellido_m, :telefono, :domicilio, :salario, :fecha_contratacion");
 
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':contrasena', $this->contrasena);

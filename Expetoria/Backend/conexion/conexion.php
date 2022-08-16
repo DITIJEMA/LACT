@@ -4,9 +4,9 @@
         //* Variables que se pueden modificar
         private $server = 'localhost';
 		private $port = 1433;
-		private $database = 'lacct1';
-		private $user = 'sserver';
-		private $password = 'root';
+		private $database = 'empresa_lacct';
+		private $user = 'sa';
+		private $password = 'Soyelmejor';
         private $conn = null;
 
         public function conectar(){
